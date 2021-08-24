@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+    <title>Document</title>
+</head>
+<br>
+    <div id="vidu">
+        <button v-on:click="chao">Button1</button>
+    </div>  </br>
+
+    <div id="vidu2">
+        <select v-on:change="menu1">
+           <option>--- Chọn thành phố ---</option>
+           <option value="1">Hà Nội</option>
+           <option value="2">Hải Phòng</option>
+           <option value="3">Đà Nẵng</option>
+        </select>  
+    </div>
+    
+    <script>
+        new Vue({
+                el: '#vidu',
+                methods: {
+                    chao: function (event) {
+                        alert('Xin chào')
+                    }
+                }
+        });
+        var app = new Vue({
+            el: '#vidu2',
+            methods: {
+                menu1: function (event) {
+                    console.log(event.target.value);
+                }
+            }
+        })
+
+
+    
+    </script>    
+    
+</body>
+</html>
