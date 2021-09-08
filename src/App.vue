@@ -1,26 +1,41 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="container">
+        <div   div id="vidu">
+            <button v-on:click="chao">Button1</button>
+        </div> 
+
+        <div id="vidu2">
+            <select v-on:change="menu1">
+            <option>--- Chọn thành phố ---</option>
+            <option value="1">Hà Nội</option>
+            <option value="2">Hải Phòng</option>
+            <option value="3">Đà Nẵng</option>
+            </select>  
+        </div>
+        <tinhtong />
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import tinhtong from './components/tinhtong.vue'
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+export default{
+    name:"App",
+    components: { tinhtong },
+    methods: {
+        chao: function () {
+            alert('Xin chào')
+        },
+        menu1: function (event) {
+            console.log(event.target.value);
+        }
+    }
+        
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+ .container{
+        margin-left: 80px;
+    }
 </style>
