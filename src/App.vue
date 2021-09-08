@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div   div id="vidu">
-            <button v-on:click="chao">Button1</button>
+            <button v-on:click="chao">{{ nut1 }}</button>
         </div> 
 
         <div id="vidu2">
@@ -13,15 +13,24 @@
             </select>  
         </div>
         <tinhtong />
+       <todolist />
+       <todoform />
     </div>
 </template>
 
 <script>
-import tinhtong from './components/tinhtong.vue'
+ import tinhtong from './components/tinhtong.vue'
+ import todolist from './components/todolist.vue'
+ import todoform from './components/todoform.vue'
 
 export default{
     name:"App",
-    components: { tinhtong },
+   components: {  tinhtong,todolist,todoform },
+    data(){
+        return{
+            nut1:"Bấm"
+        }
+    },
     methods: {
         chao: function () {
             alert('Xin chào')
